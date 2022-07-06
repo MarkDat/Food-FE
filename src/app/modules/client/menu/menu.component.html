@@ -1,0 +1,19 @@
+<div class="menu row d-flex">
+	<div class="menu__group col-md-3">
+		<span class="title">Thực đơn</span>
+		<app-list-group-menu [menus]="menus" (onSelectedItemIndex)="onGroupIndexSelected($event)"></app-list-group-menu>
+	</div>
+	<div class="menu__item col-md-6">
+		<app-dish-list [dishes]="dishesCurrent"></app-dish-list>
+	</div>
+	<div class="menu__order col-md-3">
+		<span class="title">Order</span>
+		Menu order
+	</div>
+ </div>
+
+<dx-load-panel
+shadingColor="rgba(0,0,0,0.4)"
+[(visible)]="isLoading"
+[message]="'Đang lấy các món ăn...'">
+</dx-load-panel>

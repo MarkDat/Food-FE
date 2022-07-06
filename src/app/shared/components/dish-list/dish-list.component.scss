@@ -1,0 +1,51 @@
+.dish {
+    .info {
+        .info__name {
+            color: #464646;
+			font-size: 16px;
+			line-height: 1.3em;
+			font-weight: 700;
+			margin-bottom: 0;
+			white-space: normal;
+        }
+
+		.info__description {
+			white-space: normal;
+		}
+    }
+
+	.order {
+		display: flex;
+		justify-content: space-between;
+
+		.order__button--add {
+			color: white;
+		}
+
+		.order__price {
+			flex-direction: column;
+
+			.order__price--value {
+				font-size: 16px;
+				font-weight: 700;
+				color: #0288d1;
+			}
+			.order__price--discount {
+				font-size: 12px;
+				color: gray;
+				text-decoration: line-through;
+			}
+		}
+
+		.order__notify--out-of-stock {
+			background-color: #959595;
+			color: white;
+			height: fit-content;
+			padding: 4px;
+			border-radius: 7px;
+			font-size: 12px;
+		}
+	}
+}
+
+

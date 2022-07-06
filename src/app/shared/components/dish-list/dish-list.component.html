@@ -1,0 +1,34 @@
+<dx-list [dataSource]="dishes" [focusStateEnabled]="false" height="100%" [searchEnabled]="true" searchExpr="name" searchMode="contains" search>
+	<div *dxTemplate="let item of 'item'">
+		<div class="dish row">
+			<div class="image col-md-2">
+				<img width="60" height="60" src="{{ item.photos[0].value }}"/>
+			</div>
+
+			<div class="info col-md-6">
+				<div class="info__name">{{ item.name }}</div>
+				<div class="info__description">{{ item.description }}</div>
+			</div>
+			<div class="order col-md-4">
+				<div class="order__price d-flex">
+					<span class="order__price--discount">{{item.discount_price?.text}}</span>
+					<span class="order__price--value">{{item.price.text}}</span>
+				</div>
+
+				<!-- Add -->
+				<dx-button
+				*ngIf="item.is_available"
+				[width]="30"
+				[height]="30"
+				[type]="'default'"
+				class="order__button--add">
+					<i class="dx-icon-plus"></i>
+				</dx-button>
+				
+				<!-- Out of stock -->
+				<span *ngIf="!item.is_available" class="order__notify--out-of-stock">Hết hàng</span>
+
+			</div>
+		</div>
+	</div>
+</dx-list>

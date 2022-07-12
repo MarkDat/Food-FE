@@ -1,0 +1,33 @@
+<div class="order-header d-flex justify-content-between">
+	<span class="title">Order</span>
+	<dx-button *ngIf="orderEmpty" [width]="50" [height]="33" [type]="'default'" class="action__button--add mt-2">
+		<i class="dx-icon-cart"></i>
+	</dx-button>
+</div>
+
+<dx-list [dataSource]="ordersSource" [focusStateEnabled]="false" height="500" [searchEnabled]="false" [noDataText]="'No orders to display'"
+	[allowItemDeleting]="true">
+	<div *dxTemplate="let item of 'item'">
+		<div class="dish-order row">
+			<div class="image col-md-1">
+				<img width="20" height="20" src="{{ item.photos[0].value }}" />
+			</div>
+
+			<div class="info col-md-6 pr-0 pl-3">
+				<div class="info__name" title="{{item.name}}">{{ item.name | truncate:[35] }}</div>
+			</div>
+
+			<div class="action col-md-3 d-flex">
+				<dx-button *ngIf="item.is_available" [width]="33" [height]="33" [type]="'default'"
+					class="action__button--add" (onClick)="addQuantity(item)">
+					<i class="dx-icon-plus"></i>
+				</dx-button>
+				<span class="quantity ml-2 mr-2">{{item.quantity}}</span>
+				<dx-button *ngIf="item.is_available" [width]="33" [height]="33" [type]="'default'"
+					class="action__button--remove" (onClick)="minusQuantity(item)">
+					<i class="dx-icon-minus"></i>
+				</dx-button>
+			</div>
+		</div>
+	</div>
+</dx-list>

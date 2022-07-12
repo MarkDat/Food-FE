@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Dish } from '@app/models';
 
 @Component({
@@ -9,6 +9,7 @@ import { Dish } from '@app/models';
 export class DishListComponent implements OnInit {
   @Input() dishes: Dish[] = [];
 
+  @Output() clickAdd = new EventEmitter<Dish>();
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +17,9 @@ export class DishListComponent implements OnInit {
 
   onClickImage(){
     console.log('click image');
+  }
+
+  onClickAdd(item: Dish) {
+    this.clickAdd.emit(item);
   }
 }

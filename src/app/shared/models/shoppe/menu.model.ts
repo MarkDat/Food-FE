@@ -56,3 +56,12 @@ export class DishPhoto {
 		Object.assign(this, init);
 	}
 }
+
+export class DishOrder extends Dish {
+	quantity: number = 0;
+
+	constructor(init?: Partial<DishOrder>) {
+		super();
+		Object.assign(this, init);
+	}
+}

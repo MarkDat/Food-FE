@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppeService } from '@app/services';
-import { Dish, Menu } from '@app/models';
+import { Dish, DishOrder, Menu, MenuInfo, ShoppeModelGrid } from '@app/models';
 import { finalize } from 'rxjs/operators';
 
 @Component({
@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   dishesCurrent: Dish[] = [];
   tabIndex: number = 0;
   isLoading: boolean = false;
+  orderList: DishOrder[] = [];
 
   constructor(private shoppeService: ShoppeService) { }
 
@@ -24,28 +25,44 @@ export class MenuComponent implements OnInit {
 
   loadMenu() {
     this.isLoading = true;
+
+    let menuTest =  this.shoppeService.getMenuTestLocal();
+    if(!!menuTest) {
+      this.mapMenu(menuTest);
+      this.isLoading = false;
+      return;
+    }
+
     this.shoppeService.getShoppeMenuInfo('da-nang/com-tam-1989').pipe(finalize(() => {
       this.isLoading = false;
     })).subscribe(res => {
-      this.menus = res.reply.menu_infos;
+      this.mapMenu(res);
 
-      const allMenu = new Menu({
-        dish_type_id: -1,
-        dish_type_name: 'All'
-      });
-
-      this.menus.unshift(allMenu);
-      this.onSelectedAll();
-
-      console.log(res);
+      this.shoppeService.setMenuTestLocal(res);
     });
+  }
+
+  mapMenu(menu: ShoppeModelGrid<MenuInfo>) {
+    this.menus = menu.reply.menu_infos;
+
+    const allMenu = new Menu({
+      dish_type_id: -999,
+      dish_type_name: 'All'
+    });
+    
+    if(!this.menus.some(_ => _.dish_type_id === -999)) {
+      this.menus.unshift(allMenu);
+    }
+
+    this.onSelectedAll();
   }
 
   onSelectedAll() {
     const ALL = 0;
-    this.dishesCurrent = [];
+    this.dishesCurrent = []; console.log(this.menus);
+    let i = 0;
     this.menus.map((menu, index) => {
-      if(index !== ALL) {
+      if(index !== ALL) { 
         this.dishesCurrent.push(...menu.dishes);
       }
     });
@@ -63,5 +80,21 @@ export class MenuComponent implements OnInit {
 
     this.menuSelected = this.menus[index];
     this.dishesCurrent = this.menuSelected.dishes;
+  }
+
+  onClickAdd(dish: Dish) {console.log('clicked');
+  
+
+    const dishOrderTemp = new DishOrder();
+    Object.assign(dishOrderTemp, dish);
+
+    const dishOrder = this.orderList.find(_ => _.id == dishOrderTemp.id);
+    if(!!dishOrder) {
+      dishOrder.quantity++;
+      return;
+    }
+    
+    dishOrderTemp.quantity++;
+    this.orderList.push(dishOrderTemp);
   }
 }

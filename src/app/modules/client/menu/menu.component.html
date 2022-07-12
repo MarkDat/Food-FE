@@ -4,11 +4,10 @@
 		<app-list-group-menu [menus]="menus" (onSelectedItemIndex)="onGroupIndexSelected($event)"></app-list-group-menu>
 	</div>
 	<div class="menu__item col-md-6">
-		<app-dish-list [dishes]="dishesCurrent"></app-dish-list>
+		<app-dish-list [dishes]="dishesCurrent" (clickAdd)="onClickAdd($event)"></app-dish-list>
 	</div>
 	<div class="menu__order col-md-3">
-		<span class="title">Order</span>
-		Menu order
+		<app-order-form [ordersSource]="orderList"></app-order-form>
 	</div>
  </div>
 

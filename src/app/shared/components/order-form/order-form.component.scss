@@ -1,0 +1,38 @@
+.dish-order {
+    .info {
+        .info__name {
+            color: #464646;
+			font-size: 12px;
+			line-height: 1.3em;
+			font-weight: 700;
+			margin-bottom: 0;
+			white-space: normal;
+        }
+
+		.info__description {
+			white-space: normal;
+		}
+    }
+
+    .action {
+        .action__button {
+            &--add {
+
+            }
+
+            &--remove {
+                background-color: red;
+            }
+        }
+
+        .quantity {
+            font-weight: bolder;
+        }
+    }
+}
+
+.order-header {
+    .title {
+        font-weight: bolder;
+    }
+}

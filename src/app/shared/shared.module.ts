@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ListGroupMenuComponent, DishListComponent } from '@app/shared/components';
+import { ListGroupMenuComponent, DishListComponent, OrderFormComponent } from '@app/shared/components';
 import { DxButtonModule, DxListModule, DxLoadPanelModule } from 'devextreme-angular';
+import { TruncatePipe } from '@app/pipe';
 
 export const COMMON_MODULES = [
 	CommonModule, RouterModule,
@@ -17,12 +18,16 @@ export const DEV_EXTREME_MODULES = [
 export const COMPONENT = [
   ListGroupMenuComponent,
   DishListComponent,
+  OrderFormComponent,
 ];
 
+export const PIPES = [
+  TruncatePipe
+];
 
 @NgModule({
   declarations: [
-    ...COMPONENT
+    ...COMPONENT, ...PIPES
   ],
   imports: [...COMMON_MODULES, ...DEV_EXTREME_MODULES],
   exports: [...COMMON_MODULES, ...DEV_EXTREME_MODULES, ...COMPONENT]

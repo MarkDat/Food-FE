@@ -36,7 +36,16 @@
 			],
       "@app/shared/components": [
 				"app/shared/components/index.ts"
-			]
+			],
+      "@app/pipe": [
+				"app/shared/pipes/index.ts"
+			],
+      "@app/enum": [
+				"app/app.enum.ts"
+			],
+      "@app/constant": [
+				"app/app.constants.ts"
+			],
     }
   },
   "angularCompilerOptions": {

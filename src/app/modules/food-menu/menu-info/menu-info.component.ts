@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Dish, DishOrder, Menu, MenuInfo, ShoppeModelGrid } from '@app/shared/models/index';
 import { ShoppeService } from '@app/shared/services/shoppe.service';
 import { finalize } from 'rxjs/operators';
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 @Component({
   selector: 'app-menu-info',
@@ -16,10 +17,14 @@ export class MenuInfoComponent implements OnInit {
   tabIndex: number = 0;
   isLoading: boolean = false;
   orderList: DishOrder[] = [];
+  isMobile: boolean = false;
 
-  constructor(private shoppeService: ShoppeService) { }
+  isOrderShow: boolean = false;
+
+  constructor(private shoppeService: ShoppeService, private deviceDetectorService: DeviceDetectorService) { }
 
   ngOnInit(): void {
+    this.isMobile = this.deviceDetectorService.isMobile();
     this.loadMenu();
   }
 
@@ -96,6 +101,10 @@ export class MenuInfoComponent implements OnInit {
     
     dishOrderTemp.quantity++;
     this.orderList.push(dishOrderTemp);
+  }
+
+  showOrderPopup(e) {
+    this.isOrderShow = true;
   }
 
 }

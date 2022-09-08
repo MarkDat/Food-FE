@@ -5,7 +5,7 @@
 	</dx-button>
 </div>
 
-<dx-list [dataSource]="ordersSource" [focusStateEnabled]="false" [searchEnabled]="false" [noDataText]="'No orders to display'"
+<dx-list [dataSource]="ordersSource" [scrollingEnabled]="true" [showScrollbar]="'always'" [activeStateEnabled]="false" [focusStateEnabled]="false" [searchEnabled]="false" [noDataText]="'No orders to display'" [height]="'300px'"
 	[allowItemDeleting]="true">
 	<div *dxTemplate="let item of 'item'">
 		<div class="dish-order row">
@@ -31,3 +31,8 @@
 		</div>
 	</div>
 </dx-list>
+
+<div class="total-price-order">
+	<div class="total__title">Total: </div>
+	<div class="total__price">{{total}}</div>
+</div>

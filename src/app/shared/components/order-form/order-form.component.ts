@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Dish, DishOrder } from '@app/models';
+import * as lodash from 'lodash';
 
 @Component({
   selector: 'app-order-form',
@@ -12,6 +13,15 @@ export class OrderFormComponent implements OnInit {
   get orderEmpty(): boolean {
     return this.ordersSource.some(_ => _.id);
   }
+
+  get total(): number {
+    if(!this.ordersSource) {
+      return 0;
+    }
+
+    return lodash.sumBy(this.ordersSource, function(o) { return o.price.value * o.quantity; });
+  }
+
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +29,7 @@ export class OrderFormComponent implements OnInit {
 
   addQuantity(dishOrder: DishOrder) {
     dishOrder.quantity++;
+    
   }
 
   minusQuantity(dishOrder: DishOrder) {

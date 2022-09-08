@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ListGroupMenuComponent, DishListComponent, OrderFormComponent, FooterComponent, SideNavigationMenuComponent, HeaderComponent, UserPanelComponent } from '@app/shared/components';
-import { DxButtonModule, DxContextMenuModule, DxDrawerModule, DxListModule, DxLoadPanelModule, DxScrollViewModule, DxToolbarModule, DxTreeViewModule } from 'devextreme-angular';
+import { DxButtonModule, DxContextMenuModule, DxDrawerModule, DxListModule, DxLoadPanelModule, DxPopoverModule, DxPopupModule, DxScrollViewModule, DxToolbarModule, DxTreeViewModule } from 'devextreme-angular';
 import { TruncatePipe } from '@app/pipe';
 
 export const COMMON_MODULES = [
@@ -18,6 +18,7 @@ export const DEV_EXTREME_MODULES = [
   DxTreeViewModule,
   DxToolbarModule,
   DxContextMenuModule,
+  DxPopupModule,
 ];
 
 export const COMPONENTS = [

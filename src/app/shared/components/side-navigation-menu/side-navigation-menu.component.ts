@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, NgModule, Output, Input, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { navigation } from 'app/app-navigation';
 import { DxTreeViewComponent } from 'devextreme-angular';
 
@@ -9,7 +9,7 @@ import * as events from 'devextreme/events';
   templateUrl: './side-navigation-menu.component.html',
   styleUrls: ['./side-navigation-menu.component.scss']
 })
-export class SideNavigationMenuComponent {
+export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy{
   @ViewChild(DxTreeViewComponent, { static: true })
   menu: DxTreeViewComponent;
 
@@ -32,6 +32,7 @@ export class SideNavigationMenuComponent {
 
   private _items;
   get items() {
+  
     if (!this._items) {
       this._items = navigation.map((item) => {
         if(item.path && !(/^\//.test(item.path))){ 

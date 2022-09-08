@@ -4,33 +4,17 @@ export const navigation = [
       path: '/dashboard',
       icon: 'home'
     },
-    {
-      text: 'Food Menu',
-      path: '/food-menu',
-      icon: 'folder'
-    },
+      {
+    text: 'Food Menu',
+    icon: 'folder',
+    items: [
+      {
+        text: 'Menu Info',
+        icon: 'folder',
+        path: '/food-menu/menu-info'
+      },
+    ]
+  }
 ];
-
-// export const navigation = [
-//   {
-//     text: 'Home',
-//     path: '/home',
-//     icon: 'home'
-//   },
-//   {
-//     text: 'Examples',
-//     icon: 'folder',
-//     items: [
-//       {
-//         text: 'Profile',
-//         path: '/profile'
-//       },
-//       {
-//         text: 'Tasks',
-//         path: '/tasks'
-//       }
-//     ]
-//   }
-// ];
 
   

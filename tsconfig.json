@@ -15,6 +15,7 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "strictPropertyInitialization": false,
+    "noImplicitAny": false,
     "target": "es2017",
     "module": "es2020",
     "lib": [
@@ -46,6 +47,9 @@
       "@app/constant": [
 				"app/app.constants.ts"
 			],
+      "@app/guard": [
+				"app/shared/guard/index.ts"
+			]
     }
   },
   "angularCompilerOptions": {

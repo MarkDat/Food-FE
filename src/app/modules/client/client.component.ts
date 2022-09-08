@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppInfoService } from '@app/shared/services/app-info.service';
 
 @Component({
   selector: 'app-client',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appInfo: AppInfoService) {}
 
   ngOnInit(): void {
-    // this.deliveryService.getInfoRestaurantByURL('da-nang/quan-com-ngon-phan-dang-luu')
-    // .subscribe(res => {
-    //     console.log(res);
-    // });
+  }
+
+  isAuthenticated() {
+    return true;
   }
 
 }

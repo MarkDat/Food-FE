@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppeService } from '@app/services';
-import { Dish, DishOrder, Menu, MenuInfo, ShoppeModelGrid } from '@app/models';
+import { Dish, DishOrder, Menu, MenuInfo, ShoppeModelGrid } from '@app/shared/models/index';
+import { ShoppeService } from '@app/shared/services/shoppe.service';
 import { finalize } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-menu-info',
+  templateUrl: './menu-info.component.html',
+  styleUrls: ['./menu-info.component.scss']
 })
-export class MenuComponent implements OnInit {
-  
+export class MenuInfoComponent implements OnInit {
+
   menus: Menu[] = [];
   menuSelected: Menu = new Menu({});
   dishesCurrent: Dish[] = [];
@@ -97,4 +97,5 @@ export class MenuComponent implements OnInit {
     dishOrderTemp.quantity++;
     this.orderList.push(dishOrderTemp);
   }
+
 }

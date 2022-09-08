@@ -1,4 +1,4 @@
-<dx-list [dataSource]="dishes" [focusStateEnabled]="false" height="100%" [searchEnabled]="true" searchExpr="name" searchMode="contains" search>
+<dx-list [showScrollbar]="'onScroll'" [dataSource]="dishes" [scrollingEnabled]="true" [activeStateEnabled]="false" [focusStateEnabled]="false" [searchEnabled]="true" searchExpr="name" searchMode="contains" search>
 	<div *dxTemplate="let item of 'item'">
 		<div class="dish row">
 			<div class="image col-md-2">

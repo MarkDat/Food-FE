@@ -91,8 +91,8 @@
 }
 .dx-theme-material-typography .dx-swatch-additional,
 .dx-theme-material-typography.dx-swatch-additional {
-  background-color: #363640;
-  color: #fff;
+  background-color: #ffffff;
+  color: black;
   font-weight: 400;
   font-size: 14px;
   font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
@@ -1650,7 +1650,7 @@
   outline: 0;
   -webkit-print-color-adjust: exact;
   color-adjust: exact;
-  color: #fff;
+  color: black;
   font-weight: 400;
   font-size: 14px;
   font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;

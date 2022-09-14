@@ -70,11 +70,11 @@ export class SideNavOuterToolbarComponent implements OnInit {
         this.scrollView.instance.scrollTo(0);
       }
 
-      if (this.hideMenuAfterNavigation) {
-        this.temporaryMenuOpened = false;
-        this.menuOpened = false;
-        pointerEvent.stopPropagation();
-      }
+      // if (this.hideMenuAfterNavigation) {
+      //   this.temporaryMenuOpened = false;
+      //   this.menuOpened = false;
+      //   pointerEvent.stopPropagation();
+      // }
     } else {
       pointerEvent.preventDefault();
     }

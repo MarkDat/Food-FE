@@ -1,6 +1,7 @@
 <ng-content></ng-content>
 
 <div class="menu-container">
+  <div>Header</div>
   <dx-tree-view
     [items]="items"
     keyExpr="path"
@@ -10,4 +11,5 @@
     (onItemClick)="onItemClick($event)"
     width="100%">
   </dx-tree-view>
+  <div>Footer</div>
 </div>

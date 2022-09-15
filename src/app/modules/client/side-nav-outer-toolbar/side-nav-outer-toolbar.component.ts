@@ -57,8 +57,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
     return !this.menuOpened;
   }
 
-  navigationChanged(event) { console.log('change mewnu');
-  
+  navigationChanged(event) {
     const path = event.itemData.path;
     const pointerEvent = event.event;
 

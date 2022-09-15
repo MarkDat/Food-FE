@@ -13,7 +13,9 @@ export class UserPanelComponent {
   menuMode: string;
 
   @Input()
-  user: { email: string };
+  user: { name: string,email: string };
+
+  optionVisible: boolean = false;
 
   constructor() {}
 }

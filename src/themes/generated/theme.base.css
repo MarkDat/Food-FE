@@ -11618,7 +11618,7 @@
 }
 .dx-popup-content {
   -webkit-user-drag: none;
-  padding: 24px;
+  padding: 10px;
 }
 .dx-popup-content > .dx-button {
   margin: 0 8px;

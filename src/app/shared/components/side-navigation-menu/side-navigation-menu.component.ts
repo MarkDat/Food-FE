@@ -1,4 +1,5 @@
 import { Component, NgModule, Output, Input, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { navigation } from 'app/app-navigation';
 import { DxTreeViewComponent } from 'devextreme-angular';
 
@@ -64,7 +65,23 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy{
     }
   }
 
-  constructor(private elementRef: ElementRef) { }
+  user = { name: 'Dat Luong', email: '' };
+  userMenuItems = [{
+    text: 'Profile',
+    icon: 'user',
+    onClick: () => {
+      this.router.navigate(['/profile']);
+    }
+  },
+  {
+    text: 'Logout',
+    icon: 'runner',
+    onClick: () => {
+      //this.authService.logOut();
+    }
+  }];
+
+  constructor(private elementRef: ElementRef, private router: Router) { }
 
   onItemClick(event) {
     this.selectedItemChanged.emit(event);

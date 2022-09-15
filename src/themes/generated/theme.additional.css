@@ -163,7 +163,7 @@
 }
 .dx-theme-material-typography .dx-swatch-additional a,
 .dx-theme-material-typography.dx-swatch-additional a {
-  color: #ff5722;
+  color: black;
 }
 .dx-swatch-additional .dx-icon-add,
 .dx-swatch-additional .dx-icon-addcolumnleft,
@@ -2500,6 +2500,7 @@
   line-height: 24px;
   margin-right: 0;
   margin-left: 0;
+  color: black;
 }
 .dx-swatch-additional .dx-button-has-icon .dx-icon.dx-icon-right,
 .dx-swatch-additional .dx-rtl .dx-button-has-icon .dx-icon,
@@ -2639,8 +2640,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  background-color: #363640;
-  color: #fff;
+  background-color: #ffffff;
+  color: black;
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
   box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
@@ -2649,19 +2650,13 @@
   display: block;
 }
 .dx-swatch-additional .dx-button.dx-state-hover {
-  background-color: #494956;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-  box-shadow: 0 1px 3px rgba(0,0,0,.4);
+  background-color: #E8EEF5;
 }
 .dx-swatch-additional .dx-button.dx-state-focused {
-  background-color: #494956;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.48);
-  box-shadow: 0 1px 3px rgba(0,0,0,.48);
+  background-color:  #E8EEF5;
 }
 .dx-swatch-additional .dx-button.dx-state-active {
-  background-color: #7d7d92;
-  -webkit-box-shadow: 0 4px 6px rgba(0,0,0,.48);
-  box-shadow: 0 4px 6px rgba(0,0,0,.48);
+  background-color:  #E8EEF5;
 }
 .dx-swatch-additional .dx-button.dx-state-disabled {
   background: rgba(255,255,255,.1);

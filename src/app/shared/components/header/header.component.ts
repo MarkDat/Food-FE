@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   @Input()
   title: string;
 
-  user = { email: '' };
+  user = { name: 'Dat Luong',email: '' };
 
   userMenuItems = [{
     text: 'Profile',

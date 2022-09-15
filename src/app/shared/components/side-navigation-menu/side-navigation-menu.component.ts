@@ -22,8 +22,9 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy{
 
   private _selectedItem: String;
   @Input()
-  set selectedItem(value: String) {
+  set selectedItem(value: String) {  
     this._selectedItem = value;
+    
     if (!this.menu.instance) {
       return;
     }

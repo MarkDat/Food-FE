@@ -1,7 +1,11 @@
 <ng-content></ng-content>
 
 <div class="menu-container">
-  <div>Header</div>
+  <div class="menu-container__header">
+    <a href="/" class="logo-image">
+      <img width="50px" src="../../../../assets/img/logo.png" alt="">
+    </a>
+  </div>
   <dx-tree-view
     [items]="items"
     keyExpr="path"

@@ -93,7 +93,7 @@
           }
 
           &.dx-state-selected > .dx-treeview-item * {
-            color: $base-content-muted-pressed-color;
+            color: $base-accent;
           }
 
           &:not(.dx-state-focused)>.dx-treeview-item.dx-state-hover {

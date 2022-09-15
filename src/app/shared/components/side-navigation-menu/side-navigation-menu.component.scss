@@ -15,6 +15,16 @@
     flex-direction: column;
     flex: 1;
 
+    .menu-container__header {
+      .logo-image {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        margin-left: 3%;
+      }
+    }
+
     .menu-container__footer {
       border-top: 1px solid $top-border-color;
     }
@@ -28,16 +38,17 @@
       .dx-treeview-item {
         padding-left: 0;
         padding-right: 0;
-        margin: 8px 12px;
+        margin: 8px 7px;
         border-radius: 8px;
         color: $base-content-muted-default-color;
         font-weight: 500;
-        padding: 8px 12px;
+        padding: 8px 7px;
         min-height: 41px;
 
         .dx-icon {
           width: $side-panel-min-width !important;
           margin: 0 !important;
+          margin-right: 7px !important;
         }
       }
       // ##

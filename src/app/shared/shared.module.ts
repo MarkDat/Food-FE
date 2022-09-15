@@ -19,6 +19,7 @@ export const DEV_EXTREME_MODULES = [
   DxToolbarModule,
   DxContextMenuModule,
   DxPopupModule,
+  DxPopoverModule,
 ];
 
 export const COMPONENTS = [

@@ -1,22 +1,27 @@
 <div class="user-panel">
-  <div class="user-info">
-    <div class="image-container">
-      <div class="user-image"></div>
-    </div>
-    <div class="user-name">{{user.email}}</div>
-  </div>
-  <dx-context-menu
-    *ngIf="menuMode === 'context'"
-    [items]="menuItems"
-    target=".user-button"
-    showEvent="dxclick"
-    width="210px"
-    [position]="{ my: 'top', at: 'bottom' }"
-    cssClass="user-menu">
-  </dx-context-menu>
-  <dx-list
-    *ngIf="menuMode === 'list'"
-    class="dx-toolbar-menu-action"
-    [items]="menuItems">
-  </dx-list>
+	<div class="user-info">
+		<div class="image-container">
+			<div class="user-image"></div>
+		</div>
+		<div class="user-name">{{user.name}}</div>
+	</div>
+	<div id="user-option" class="user-action">
+		<dx-button [type]="'normal'" [icon]="'overflow'" (onClick)="optionVisible = !optionVisible">
+		</dx-button>
+	</div>
 </div>
+
+<dx-popover target="#user-option" position="top" [width]="232" [(visible)]="optionVisible">
+	<div *dxTemplate="let data = model; of: 'content'">
+		<div class="options-container">
+			<div class="options-container__action">
+				<a href="#" target="_blank" class="options-item"><span>Help center & FAQ</span></a>
+				<a href="#" target="_blank" class="options-item"><span>Terms of Use</span></a>
+				<a href="#" target="_blank" class="options-item"><span>Privacy Policy</span></a>
+			</div>
+			<div class="options-container__logout">
+				<a href="#" target="_blank" class="options-item"><span>Log out</span></a>
+			</div>
+		</div>
+	</div>
+</dx-popover>

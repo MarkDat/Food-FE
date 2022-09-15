@@ -1,5 +1,6 @@
 @import "../../../../dx-styles.scss";
 @import "../../../../themes/generated/variables.additional.scss";
+@import "../../../../themes/generated/variables.base.scss";
 
 :host {
   display: flex;
@@ -13,6 +14,10 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    .menu-container__footer {
+      border-top: 1px solid $top-border-color;
+    }
 
     ::ng-deep .dx-treeview {
       // ## Long text positioning

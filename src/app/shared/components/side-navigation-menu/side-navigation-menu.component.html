@@ -11,5 +11,7 @@
     (onItemClick)="onItemClick($event)"
     width="100%">
   </dx-tree-view>
-  <div>Footer</div>
+  <div class="menu-container__footer">
+    <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="list"></app-user-panel>
+  </div>
 </div>

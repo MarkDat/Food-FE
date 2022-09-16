@@ -99,4 +99,14 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy{
   ngOnDestroy() {
     events.off(this.elementRef.nativeElement, 'dxclick');
   }
+
+  onContentReady(e) {
+    this.setItemNavCurrent();
+  }
+
+  setItemNavCurrent() {
+    if(!this.selectedItem) {
+      this.selectedItem = this.router.url;
+    }
+  }
 }

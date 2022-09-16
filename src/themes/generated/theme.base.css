@@ -2403,7 +2403,7 @@
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
-  min-width: 36px;
+  min-width: 20px;
 }
 .dx-button .dx-icon {
   -webkit-user-drag: none;

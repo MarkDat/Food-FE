@@ -21,7 +21,7 @@ const routes: Routes = [
 				canActivate: [AuthGuard],
 				loadChildren: () => import('@app/modules/food-menu/food-menu.module').then(m => m.FoodMenuModule)
 			}
-		]
+		],
 	}
 ];
 

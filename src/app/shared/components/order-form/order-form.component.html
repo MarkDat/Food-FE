@@ -18,12 +18,12 @@
 			</div>
 
 			<div class="action col-md-3 d-flex">
-				<dx-button *ngIf="item.is_available" [width]="33" [height]="33" [type]="'default'"
+				<dx-button *ngIf="item.is_available" [width]="25" [height]="25" [type]="'default'"
 					class="action__button--add" (onClick)="addQuantity(item)">
 					<i class="dx-icon-plus"></i>
 				</dx-button>
 				<span class="quantity ml-2 mr-2">{{item.quantity}}</span>
-				<dx-button *ngIf="item.is_available" [width]="33" [height]="33" [type]="'default'"
+				<dx-button *ngIf="item.is_available" [width]="25" [height]="25" [type]="'default'"
 					class="action__button--remove" (onClick)="minusQuantity(item)">
 					<i class="dx-icon-minus"></i>
 				</dx-button>

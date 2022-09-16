@@ -17,4 +17,9 @@
 .content {
   flex-grow: 1;
   padding: 5px 5px;
+  min-height: calc(100vh - 59px);
+}
+
+.content-footer {
+  height: 40px;
 }

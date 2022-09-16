@@ -2,16 +2,16 @@ export const navigation = [
   {
     text: 'Dashboard',
     path: '/dashboard',
-    icon: 'home',
+    icon: 'fa fa-home',
   },
   {
     text: 'Food Menu',
-    icon: 'folder',
+    icon: 'fa fa-cutlery',
     path: '/food-menu/menu-info',
   },
   {
     text: 'Setting',
-    icon: 'toolbox',
+    icon: 'fa fa-cog',
     path: '',
   },
 ];

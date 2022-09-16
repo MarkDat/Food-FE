@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { DxScrollViewComponent } from 'devextreme-angular';
 import { ScreenService } from '@app/services';
@@ -47,6 +47,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
     this.menuRevealMode = isXSmall ? 'slide' : 'expand';
     this.minMenuSize = isXSmall ? 0 : 60;
     this.shaderEnabled = !isLarge;
+    this.menuOpened = isLarge;
   }
 
   get hideMenuAfterNavigation() {
@@ -61,7 +62,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
     const path = event.itemData.path;
     const pointerEvent = event.event;
 
-    if (path && this.menuOpened) {
+    if (path) {
       if (event.node.selected) {
         pointerEvent.preventDefault();
       } else {
@@ -80,9 +81,14 @@ export class SideNavOuterToolbarComponent implements OnInit {
   }
 
   navigationClick() {
-    if (this.showMenuAfterClick) {
-      this.temporaryMenuOpened = true;
-      this.menuOpened = true;
-    }
+    // if (this.showMenuAfterClick) {
+    //   this.temporaryMenuOpened = true;
+    //   this.menuOpened = true;
+    // }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.updateDrawer();
   }
 }

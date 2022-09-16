@@ -13,7 +13,7 @@
     [focusStateEnabled]="false"
     expandEvent="click"
     (onItemClick)="onItemClick($event)"
-    width="100%">
+    [width]="menuOpened ? '100%':'60px'">
   </dx-tree-view>
   <div class="menu-container__footer">
     <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="list"></app-user-panel>

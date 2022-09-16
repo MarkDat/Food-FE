@@ -1,5 +1,12 @@
 .dish {
+	.image {
+		padding-left: 0;
+	}
+
     .info {
+		padding-left: 0;
+		padding-right: 0;
+		
         .info__name {
             color: #464646;
 			font-size: 16px;
@@ -17,6 +24,7 @@
 	.order {
 		display: flex;
 		justify-content: space-between;
+		padding-right: 0;
 
 		.order__button--add {
 			color: white;
@@ -41,8 +49,8 @@
 			background-color: #959595;
 			color: white;
 			height: fit-content;
-			padding: 4px;
-			border-radius: 7px;
+			padding: 2px 10px;
+			border-radius: 4px;
 			font-size: 12px;
 		}
 	}

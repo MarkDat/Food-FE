@@ -8475,6 +8475,7 @@
 .dx-list-item.dx-state-hover {
   background-color: rgba(0,0,0,.04);
   color: rgba(0,0,0,.87);
+  border-radius: 8px;
 }
 .dx-list-item.dx-state-active .dx-list-switchable-delete-button-inner-wrapper,
 .dx-list-item.dx-state-hover .dx-list-switchable-delete-button-inner-wrapper {
@@ -8509,7 +8510,7 @@
   border-bottom: none;
 }
 .dx-list-item-content {
-  font-size: 16px;
+  font-size: 14px;
   padding: 14px 16px 13px;
 }
 .dx-list .dx-empty-message {

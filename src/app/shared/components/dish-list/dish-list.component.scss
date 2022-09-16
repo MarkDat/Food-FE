@@ -1,10 +1,10 @@
 .dish {
 	.image {
-		padding-left: 0;
+		padding-left: 7px;
 	}
 
     .info {
-		padding-left: 0;
+		padding-left: 5px;
 		padding-right: 0;
 		
         .info__name {
@@ -24,7 +24,7 @@
 	.order {
 		display: flex;
 		justify-content: space-between;
-		padding-right: 0;
+		padding-right: 7px;
 
 		.order__button--add {
 			color: white;

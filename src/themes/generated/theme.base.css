@@ -8409,6 +8409,7 @@
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-focused {
   background-color: rgba(0,0,0,.04);
   color: rgba(0,0,0,.87);
+  border-radius: 8px;
 }
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-focused.dx-list-item-selected {
   background-color: rgba(0,0,0,.18);
@@ -8503,6 +8504,7 @@
 .dx-list .dx-empty-message,
 .dx-list-item {
   color: rgba(0,0,0,.87);
+  margin-top: 5px;
 }
 .dx-list-item-separator-hidden .dx-list .dx-empty-message,
 .dx-list-item-separator-hidden .dx-list-item {

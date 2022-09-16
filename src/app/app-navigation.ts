@@ -5,12 +5,12 @@ export const navigation = [
     icon: 'fa fa-home',
   },
   {
-    text: 'Food Menu',
+    text: 'Thực Đơn',
     icon: 'fa fa-cutlery',
     path: '/food-menu/menu-info',
   },
   {
-    text: 'Setting',
+    text: 'Cài đặt',
     icon: 'fa fa-cog',
     path: '',
   },

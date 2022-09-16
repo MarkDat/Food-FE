@@ -105,8 +105,9 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy{
   }
 
   setItemNavCurrent() {
-    if(!this.selectedItem) {
-      this.selectedItem = this.router.url;
+    if(!this.selectedItem) { 
+      const itemNav = navigation.find(_ => this.router.url.startsWith(_.path));
+      this.selectedItem = itemNav?.path || '#';
     }
   }
 }

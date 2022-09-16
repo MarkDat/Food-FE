@@ -82,6 +82,8 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy{
     }
   }];
 
+  @Input() menuOpened: boolean = false;
+
   constructor(private elementRef: ElementRef, private router: Router) { }
 
   onItemClick(event) {

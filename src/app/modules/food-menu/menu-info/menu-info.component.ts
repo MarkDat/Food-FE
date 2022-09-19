@@ -88,8 +88,6 @@ export class MenuInfoComponent implements OnInit {
   }
 
   onClickAdd(dish: Dish) {console.log('clicked');
-  
-
     const dishOrderTemp = new DishOrder();
     Object.assign(dishOrderTemp, dish);
 

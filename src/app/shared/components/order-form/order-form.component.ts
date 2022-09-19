@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Dish, DishOrder } from '@app/models';
 import * as lodash from 'lodash';
 
@@ -8,7 +8,18 @@ import * as lodash from 'lodash';
   styleUrls: ['./order-form.component.scss']
 })
 export class OrderFormComponent implements OnInit {
-  @Input() ordersSource: DishOrder[] = [];
+
+  private _ordersSource: DishOrder[];
+	@Input() get ordersSource(): DishOrder[] {
+		return this._ordersSource || [];
+	}
+
+	set ordersSource(value) {
+		if (this._ordersSource !== value) {
+			this._ordersSource = value;
+      this.ordersSourceChange.emit(value);
+		}
+	}
 
   get orderEmpty(): boolean {
     return this.ordersSource.some(_ => _.id);
@@ -21,6 +32,8 @@ export class OrderFormComponent implements OnInit {
 
     return lodash.sumBy(this.ordersSource, function(o) { return o.price.value * o.quantity; });
   }
+
+  @Output() ordersSourceChange = new EventEmitter<DishOrder[]>();
 
   constructor() { }
 
@@ -43,5 +56,9 @@ export class OrderFormComponent implements OnInit {
   removeOrder(id: number) {
     const dishOrderIndex = this.ordersSource.findIndex(_ => _.id === id);
     this.ordersSource.splice(dishOrderIndex, 1);
+  }
+
+  clearCart(e) {
+    this.ordersSource = [];
   }
 }

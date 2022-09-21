@@ -13,16 +13,16 @@
 
 <dx-list [dataSource]="ordersSource" [scrollingEnabled]="true" [showScrollbar]="'always'" [activeStateEnabled]="false" [focusStateEnabled]="false" [searchEnabled]="false" [noDataText]="'No orders to display'" [height]="'250px'">
 	<div *dxTemplate="let item of 'item'">
-		<div class="dish-order row">
+		<div class="dish-order row dx-flex justify-content-between">
 			<div class="image col-md-1">
 				<img width="20" height="20" src="{{ item.photos[0].value }}" />
 			</div>
 
-			<div class="info col-md-5 pr-0 pl-3">
+			<div class="info col-md-6 pr-0 pl-3">
 				<div class="info__name" title="{{item.name}}">{{ item.name | truncate:[35] }}</div>
 			</div>
 
-			<div class="action col-md-5 d-flex pr-0">
+			<div class="action col-md-4 d-flex pr-0">
 				<dx-button *ngIf="item.is_available" [width]="25" [height]="25" [type]="'default'"
 					class="action__button--add" (onClick)="addQuantity(item)">
 					<i class="dx-icon-plus"></i>

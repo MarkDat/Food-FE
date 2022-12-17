@@ -21,6 +21,6 @@ export class ShoppeService {
   }
 
   getShoppeMenuInfo(partUrl: string): Observable<ShoppeModelGrid<MenuInfo>> {
-    return this.baseService.getBase(`https://food-menu-order.herokuapp.com/food-order/1?url=${partUrl}`);
+    return this.baseService.getBase(`https://web-production-11c5.up.railway.app/food-order/1?url=${partUrl}`);
   }
 }

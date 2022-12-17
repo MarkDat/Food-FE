@@ -21,6 +21,6 @@ export class ShoppeService {
   }
 
   getShoppeMenuInfo(partUrl: string): Observable<ShoppeModelGrid<MenuInfo>> {
-    return this.baseService.getBase(`https://web-production-11c5.up.railway.app/food-order/1?url=${partUrl}`);
+    return this.baseService.getBase(`https://shopee-food-api.vercel.app/v1/menu?url=${partUrl}`);
   }
 }
